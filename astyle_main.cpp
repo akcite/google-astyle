@@ -2607,6 +2607,9 @@ void ASOptions::parseOption(const string& arg, const string& errorInfo)
   } else
     isOptionError(arg, errorInfo);
 #endif
+//  formatter.setFormattingStyle(STYLE_LINUX);
+//  formatter.setTabIndentation(2, true);
+//  formatter.setSpaceIndentation(2);
 }	// End of parseOption function
 
 void ASOptions::importOptions(istream& in, vector<string> &optionsVector)
@@ -2849,6 +2852,13 @@ extern "C" EXPORT const char* STDCALL AStyleGetVersion (void)
 
 int main(int argc, char** argv)
 {
+  argc = 4;
+  char style[] = "--style=linux";
+  char indent[] = "--indent=spaces=2";
+
+  argv[2] = style;
+  argv[3] = indent;
+
   // create objects
   ASFormatter formatter;
   g_console = new ASConsole(formatter);
