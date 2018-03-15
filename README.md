@@ -16,3 +16,6 @@ The command line flags we are using are:
 
   `--style=linux --indent=spaces=2`
 
+How To Use
+==========
+./gstyle source_code.extension
